@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de propiedades físicas del audio</title>
+</head>
+<body>
+
+    <script>
+        // Cálculo de longitud de onda 
+        function calculoLongitudDeOnda(frecuencia) {
+            const VelocidadDelSonido = 343;
+            return VelocidadDelSonido / frecuencia;
+        }
+
+        // Cálculo del periodo (tiempo en que se propaga una onda de sonido)
+        function CalculoDePeriodo(frecuencia) {
+            return 1 / frecuencia;
+        }
+
+        // Cálculo para mostrar las propiedades físicas del sonido 
+        function CalcularPropiedades() {
+            const frecuencia = parseFloat(prompt('Ingrese una frecuencia en Hz.'));
+            const longitudDeOnda = calculoLongitudDeOnda(frecuencia);
+            const periodo = CalculoDePeriodo(frecuencia);
+
+            // Resultado a usuario 
+            const resultado = `Frecuencia: ${frecuencia} Hz
+Longitud de Onda: ${longitudDeOnda.toFixed(2)} metros
+Periodo: ${periodo.toFixed(6)} segundos`;
+
+            alert(resultado);
+        }
+    </script>
+
+    <button onclick="CalcularPropiedades()">Calcular Propiedades</button>
+
+</body>
+</html>
